@@ -1,27 +1,43 @@
-
+/* style.css - SpeakUp Italia final */
 :root{
-  --bg:#071022;
-  --panel:#0b1220;
-  --muted:#94a3b8;
+  --bg:#ffffff;
+  --text:#222222;
+  --muted:#56606a;
   --accent:#ff6b6b;
-  --blue:#1e90ff;
+  --blue:#007bff;
+  --orange:#FFA500;
   --radius:12px;
+  --maxw:1100px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,var(--bg),#0f1724);color:#e6eef8}
-.site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:28px auto;padding:20px}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
 .brand{display:flex;align-items:center;gap:12px}
-.logo-top{width:56px;height:56px;object-fit:contain}
-.logo-hero{width:240px;max-width:60%;display:block;margin:14px 0}
-.lead{color:var(--muted);margin:0}
-.btn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:inherit;text-decoration:none;cursor:pointer}
-.container{max-width:1100px;margin:20px auto;padding:0 24px}
-.hero{padding:28px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
-.socials{display:flex;gap:10px;margin-top:8px}
-.social{padding:8px 12px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:inherit}
-.quick-links{margin-top:16px;display:flex;flex-direction:column;gap:12px}
-.class-btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none}
+.logo-top{width:64px;height:64px;object-fit:contain;border-radius:10px}
+.lead{margin:0;color:var(--muted);font-size:13px}
+nav{display:flex;align-items:center;gap:12px}
+.btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:10px;color:var(--text);text-decoration:none;cursor:pointer;font-weight:600}
+main{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+.card{background:#fff;padding:18px;border-radius:14px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.04)}
+.hero{padding:34px;border-radius:14px;position:relative;overflow:hidden}
+.logo-hero{width:260px;max-width:52%;display:block;margin-bottom:16px;opacity:0;transform:translateY(-12px) scale(.98)}
+.hero-title{font-size:36px;margin:0;color:var(--text);opacity:0;transform:translateY(8px);transition:all .45s ease}
+.hero-sub{margin:8px 0;color:var(--muted);opacity:0;transform:translateY(8px);transition:all .45s ease}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.social{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:rgba(0,0,0,0.02);text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,0.03);transition:transform .18s ease, box-shadow .18s ease}
+.social:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+.quick-links{margin-top:18px;display:flex;flex-direction:column;gap:12px}
 .zoom-link{color:var(--blue);text-decoration:underline;font-weight:700}
-.whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#043017;padding:14px 16px;border-radius:32px;text-decoration:none;font-weight:700}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px}
-@media(max-width:800px){.site-header{padding:12px}.logo-hero{width:160px}}
+.class-btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;background:linear-gradient(90deg, rgba(0,123,255,0.06), rgba(0,123,255,0.03));color:var(--blue);font-weight:700;border:1px solid rgba(0,123,255,0.08)}
+.sidebar-list{list-style:none;padding:0;margin:10px 0 0 0}
+.sidebar-list li{margin:8px 0}
+.link-class{color:var(--blue);text-decoration:none;font-weight:700}
+.whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#043017;padding:12px 14px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 12px 30px rgba(37,211,102,0.12)}
+footer.small{margin-top:18px;color:var(--muted);font-size:13px}
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)} }
+@keyframes pop { from{opacity:0;transform:scale(.98) translateY(-6px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.animate-pop{animation:pop 440ms cubic-bezier(.2,.9,.3,1) forwards}
+.animate-in{animation:fadeUp 520ms ease-out forwards}
+@media (max-width:980px){ main{grid-template-columns:1fr;padding-bottom:48px} .logo-hero{width:180px} .hero-title{font-size:26px} .brand{gap:10px} .logo-top{width:52px;height:52px} }

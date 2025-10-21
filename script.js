@@ -1,34 +1,48 @@
-// common script.js
-const itBtn = document.getElementById('to-it');
-const esBtn = document.getElementById('to-es');
-function setLang(lang){
-  document.querySelectorAll('[data-lang-italian]').forEach(el=> el.style.display = (lang==='it' ? '' : 'none'));
-  document.querySelectorAll('[data-lang-spanish]').forEach(el=> el.style.display = (lang==='es' ? '' : 'none'));
-  if(lang==='es'){
-    document.querySelectorAll('[data-i18n-title]').forEach(el=> el.textContent = el.dataset.es);
-  } else {
-    document.querySelectorAll('[data-i18n-title]').forEach(el=> el.textContent = el.dataset.it);
-  }
-  itBtn.setAttribute('aria-pressed', lang==='it');
-  esBtn.setAttribute('aria-pressed', lang==='es');
-}
-if(itBtn) itBtn.addEventListener('click', ()=> setLang('it'));
-if(esBtn) esBtn.addEventListener('click', ()=> setLang('es'));
+// script.js - SpeakUp Italia WhatsApp fix
 
-// hero animations
-window.addEventListener('load', ()=>{
-  const logo = document.querySelector('.logo-hero');
-  const title = document.querySelector('.hero-title');
-  const sub = document.querySelector('.hero-sub');
-  if(logo) setTimeout(()=>{ logo.classList.add('animate-pop'); logo.style.opacity=1; }, 160);
-  if(title) setTimeout(()=>{ title.classList.add('animate-in'); title.style.opacity=1; }, 360);
-  if(sub) setTimeout(()=>{ sub.classList.add('animate-in'); sub.style.opacity=1; }, 520);
+// === CONFIGURAZIONE WHATSAPP ===
+const COUNTRY_CODE = "591";   // prefisso internazionale (Bolivia)
+const PHONE_NUMBER = "69064630"; // tuo numero WhatsApp senza + o spazi
+const FULL_NUMBER = `${COUNTRY_CODE}${PHONE_NUMBER}`;
+
+// === IMPOSTA LINK WHATSAPP SU TUTTI I BOTTONI ===
+function updateWhatsAppLinks() {
+  const whatsappUrl = `https://wa.me/${FULL_NUMBER}`;
+  const btn1 = document.getElementById("whatsapp-link");
+  const btn2 = document.getElementById("whatsapp-fab-link");
+
+  if (btn1) btn1.href = whatsappUrl;
+  if (btn2) btn2.href = whatsappUrl;
+}
+
+updateWhatsAppLinks();
+
+// === CONTROLLO APERTURA CHAT ===
+document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+  link.addEventListener("click", (e) => {
+    setTimeout(() => {
+      alert("Se la chat non si è aperta, assicurati di avere WhatsApp Web o l’app installata 📱");
+    }, 3000);
+  });
 });
 
-// audio control for games
-function playSuccess(){
-  try{
-    const audio = document.getElementById('success-audio');
-    if(audio && !audio.muted){ audio.currentTime=0; audio.play(); }
-  }catch(e){}
+// === BILINGUE IT/ES ===
+const itBtn = document.getElementById("to-it");
+const esBtn = document.getElementById("to-es");
+
+function setLang(lang) {
+  document.querySelectorAll("[data-lang-italian]").forEach(el => el.style.display = (lang === "it" ? "" : "none"));
+  document.querySelectorAll("[data-lang-spanish]").forEach(el => el.style.display = (lang === "es" ? "" : "none"));
+  itBtn?.setAttribute("aria-pressed", lang === "it");
+  esBtn?.setAttribute("aria-pressed", lang === "es");
 }
+
+itBtn?.addEventListener("click", () => setLang("it"));
+esBtn?.addEventListener("click", () => setLang("es"));
+
+// === IMPOSTAZIONE AUTOMATICA LINGUA ===
+(function initLang() {
+  const preferred = navigator.language || navigator.userLanguage || "it";
+  if (preferred.startsWith("es")) setLang("es");
+  else setLang("it");
+})();

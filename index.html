@@ -1,71 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SpeakUp Italia — Metodo KiSS</title>
-  <meta name="description" content="SpeakUp Italia - Classi interattive con il metodo KiSS: verbi, attività e giochi bilingue" />
-  <link rel="icon" href="assets/favicon.png" sizes="32x32" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeakUp Italia</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f5f5f5;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 50px;
+      border-radius: 10px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom right, #d0ebff, #f5f5f5);
+    }
+    .hero img {
+      width: 150px;
+      border-radius: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #222;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+    }
+    .btn-blue {
+      background-color: #007BFF;
+    }
+    .btn-blue:hover {
+      background-color: #0056b3;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe5d;
+    }
+    footer {
+      background-color: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #333;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <audio id="success-audio" src="assets/success.wav" preload="auto"></audio>
-  <div class="container">
-    <header class="site-header">
-      <div class="brand">
-        <img src="assets/logo.png" alt="Logo SpeakUp Italia" class="logo-top">
-        <div>
-          <h1>SpeakUp Italia</h1>
-          <p class="lead" data-lang-italian>Classi online con il metodo KiSS — lingua, verbi e giochi</p>
-          <p class="lead" data-lang-spanish style="display:none">Clases online con el método KiSS — idioma, verbos y juegos</p>
-        </div>
-      </div>
-      <nav>
-        <div class="lang-toggle">
-          <button id="to-it" aria-pressed="true">IT</button>
-          <button id="to-es" aria-pressed="false">ES</button>
-        </div>
-        <a class="btn" id="show-home">Home</a>
-      </nav>
-    </header>
-    <main>
-      <section class="card hero" id="home">
-        <img src="assets/logo.png" alt="Logo SpeakUp" class="logo-hero">
-        <h2 class="hero-title" data-i18n-title data-it="Benvenuti su SpeakUp Italia" data-es="Bienvenidos a SpeakUp Italia">Benvenuti su SpeakUp Italia</h2>
-        <p class="hero-sub" data-i18n-title data-it="Lezioni di italiano e spagnolo con il metodo KiSS — attività, verbi e giochi interattivi." data-es="Clases de italiano y español con el método KiSS — actividades, verbos y juegos interactivos.">Lezioni di italiano e spagnolo con il metodo KiSS — attività, verbi e giochi interattivi.</p>
-        <div class="socials">
-          <a class="social" href="https://www.instagram.com/speakupitalian?igsh=MTh2dGd5anRtajkzNg==" target="_blank" rel="noopener">Instagram</a>
-          <a class="social" href="https://facebook.com/yourprofile" target="_blank" rel="noopener">Facebook</a>
-          <a class="social" href="https://tiktok.com/@yourprofile" target="_blank" rel="noopener">TikTok</a>
-        </div>
-        <div class="quick-links">
-          <a class="zoom-link" href="https://us05web.zoom.us/j/85152068635?pwd=VWI550PTkO1hnnttNRE9ayTUAIPUbB.1" target="_blank" rel="noopener noreferrer">▶ Entra alla riunione Zoom</a>
-          <div>
-            <a class="class-btn" href="game1.html">Lezione 1 — Verbi in Azione</a>
-            <a class="class-btn" href="game2.html">Lezione 2 — Sfida delle Parole</a>
-            <a class="class-btn" href="game3.html">Lezione 3 — Cultura Quiz</a>
-          </div>
-        </div>
-      </section>
-      <aside class="card sidebar">
-        <h3>Lezioni KiSS</h3>
-        <p class="lead" style="margin-bottom:8px;color:var(--muted)">Seleziona la lezione per aprire la pagina dedicata</p>
-        <ul class="sidebar-list">
-          <li><a class="link-class" href="game1.html">Lezione 1 — Verbi in Azione</a></li>
-          <li><a class="link-class" href="game2.html">Lezione 2 — Sfida delle Parole</a></li>
-          <li><a class="link-class" href="game3.html">Lezione 3 — Cultura Quiz</a></li>
-          <li><a class="link-class" href="index.html">Torna alla home</a></li>
-        </ul>
-        <div style="margin-top:16px">
-          <strong>Contattaci</strong>
-          <p class="lead" style="color:var(--muted)">Scrivici su WhatsApp per info e iscrizioni</p>
-          <a class="btn" href="https://wa.me/59169064630" target="_blank" rel="noopener">Chatta su WhatsApp</a>
-        </div>
-        <footer class="small"><small>© 2025 SpeakUp Italia – Progetto educativo di italiano e spagnolo</small></footer>
-      </aside>
-    </main>
-  </div>
-  <a class="whatsapp-fab" href="https://wa.me/59169064630" target="_blank" rel="noopener">Chatta (WhatsApp)</a>
-  <script src="script.js"></script>
+  <header>
+    <img src="logo.png" alt="SpeakUp Italia Logo">
+    <nav>
+      <a href="#lezioni">Lezioni</a>
+      <a href="#social">Social</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="logo.png" alt="Logo Animato">
+    <h1>SpeakUp Italia</h1>
+    <p>Impara le lingue con il metodo KiSS: semplice, interattivo e divertente!</p>
+    <a href="https://us05web.zoom.us/j/85152068635?pwd=VWI550PTkO1hnnttNRE9ayTUAIPUbB.1"
+       target="_blank"
+       class="btn btn-blue">🔵 Entra nella lezione Zoom</a>
+    <a href="https://wa.me/59169064630"
+       target="_blank"
+       class="btn btn-whatsapp">💬 Chatta su WhatsApp</a>
+  </section>
+
+  <footer id="social">
+    <p>Seguici sui nostri social:</p>
+    <a href="https://www.instagram.com/speakupitalian?igsh=MTh2dGd5anRtajkzNg==" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+    <p style="margin-top:10px;">© 2025 SpeakUp Italia – Progetto educativo virtuale</p>
+  </footer>
 </body>
 </html>

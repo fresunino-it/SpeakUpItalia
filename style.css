@@ -1,43 +1,38 @@
-/* style.css - SpeakUp Italia final */
+/* style.css - SpeakUpItalia Pro */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 :root{
-  --bg:#ffffff;
-  --text:#222222;
-  --muted:#56606a;
-  --accent:#ff6b6b;
-  --blue:#007bff;
-  --orange:#FFA500;
-  --radius:12px;
-  --maxw:1100px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  --bg:#ffffff; --muted:#64748b; --text:#0b1220; --accent:#ff6b6b; --blue:#007bff; --success:#25D366;
+  --radius:12px; --maxw:1100px; --glass: rgba(2,6,23,0.04);
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+html,body{height:100%}
+body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5}
 .container{max-width:var(--maxw);margin:28px auto;padding:20px}
-.site-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
-.brand{display:flex;align-items:center;gap:12px}
-.logo-top{width:64px;height:64px;object-fit:contain;border-radius:10px}
-.lead{margin:0;color:var(--muted);font-size:13px}
-nav{display:flex;align-items:center;gap:12px}
-.btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:10px;color:var(--text);text-decoration:none;cursor:pointer;font-weight:600}
-main{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
-.card{background:#fff;padding:18px;border-radius:14px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.04)}
-.hero{padding:34px;border-radius:14px;position:relative;overflow:hidden}
-.logo-hero{width:260px;max-width:52%;display:block;margin-bottom:16px;opacity:0;transform:translateY(-12px) scale(.98)}
-.hero-title{font-size:36px;margin:0;color:var(--text);opacity:0;transform:translateY(8px);transition:all .45s ease}
-.hero-sub{margin:8px 0;color:var(--muted);opacity:0;transform:translateY(8px);transition:all .45s ease}
-.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.social{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:rgba(0,0,0,0.02);text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,0.03);transition:transform .18s ease, box-shadow .18s ease}
-.social:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,0.06)}
-.quick-links{margin-top:18px;display:flex;flex-direction:column;gap:12px}
-.zoom-link{color:var(--blue);text-decoration:underline;font-weight:700}
-.class-btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;background:linear-gradient(90deg, rgba(0,123,255,0.06), rgba(0,123,255,0.03));color:var(--blue);font-weight:700;border:1px solid rgba(0,123,255,0.08)}
-.sidebar-list{list-style:none;padding:0;margin:10px 0 0 0}
-.sidebar-list li{margin:8px 0}
-.link-class{color:var(--blue);text-decoration:none;font-weight:700}
-.whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#043017;padding:12px 14px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 12px 30px rgba(37,211,102,0.12)}
-footer.small{margin-top:18px;color:var(--muted);font-size:13px}
-@keyframes fadeUp { from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)} }
-@keyframes pop { from{opacity:0;transform:scale(.98) translateY(-6px)} to{opacity:1;transform:scale(1) translateY(0)} }
-.animate-pop{animation:pop 440ms cubic-bezier(.2,.9,.3,1) forwards}
-.animate-in{animation:fadeUp 520ms ease-out forwards}
-@media (max-width:980px){ main{grid-template-columns:1fr;padding-bottom:48px} .logo-hero{width:180px} .hero-title{font-size:26px} .brand{gap:10px} .logo-top{width:52px;height:52px} }
+.header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:64px;height:64px;object-fit:contain;border-radius:10px}
+.brand h1{font-size:20px;margin:0}
+.nav{display:flex;gap:10px;align-items:center}
+.nav a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--text);font-weight:600;border:1px solid rgba(11,18,32,0.04);background:transparent}
+.hero{display:flex;flex-direction:column;gap:12px;padding:36px;border-radius:14px;border:1px solid rgba(11,18,32,0.04);box-shadow:0 10px 30px rgba(2,6,23,0.04);background:linear-gradient(180deg,#ffffff,#fbfdff)}
+.logo-hero{width:220px;max-width:48%;transition:transform .6s ease,opacity .6s ease;transform-origin:center;opacity:0;transform:translateY(-10px) scale(.98)}
+.hero h2{font-size:34px;margin:0}
+.hero p{color:var(--muted);margin:0;max-width:60ch}
+.actions{margin-top:10px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid rgba(0,0,0,0.06);cursor:pointer}
+.btn-blue{background:linear-gradient(90deg, rgba(0,123,255,0.08), rgba(0,123,255,0.03));color:var(--blue);border-color:rgba(0,123,255,0.12)}
+.btn-whatsapp{background:var(--success);color:#043017;border-color:rgba(37,211,102,0.12)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.card{padding:16px;border-radius:12px;background:#fff;border:1px solid rgba(11,18,32,0.03);box-shadow:0 6px 20px rgba(2,6,23,0.04)}
+.footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center;padding:20px}
+.whatsapp-fab{position:fixed;right:18px;bottom:18px;background:var(--success);color:#043017;padding:12px 14px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 14px 40px rgba(37,211,102,0.12)}
+.link-blue{color:var(--blue);text-decoration:underline;font-weight:700}
+.resource{background:linear-gradient(180deg,rgba(0,0,0,0.01),rgba(0,0,0,0.00));padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.03);}
+.small{font-size:13px;color:var(--muted)}
+
+/* animations */
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.animate-in{animation:fadeUp .6s ease-out forwards}
+
+/* responsive */
+@media(max-width:980px){ .hero{padding:20px} .brand img{width:52px;height:52px} .hero h2{font-size:24px} .logo-hero{width:160px} .container{padding:12px} }

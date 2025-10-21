@@ -1,120 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpeakUp Italia</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #f5f5f5;
-      padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header img {
-      height: 50px;
-      border-radius: 10px;
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to bottom right, #d0ebff, #f5f5f5);
-    }
-    .hero img {
-      width: 150px;
-      border-radius: 20px;
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #222;
-      margin: 20px 0;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      color: white;
-    }
-    .btn-blue {
-      background-color: #007BFF;
-    }
-    .btn-blue:hover {
-      background-color: #0056b3;
-    }
-    .btn-whatsapp {
-      background-color: #25D366;
-    }
-    .btn-whatsapp:hover {
-      background-color: #1ebe5d;
-    }
-    footer {
-      background-color: #f5f5f5;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #333;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SpeakUp Italia — Metodo KiSS</title>
+<meta name="description" content="SpeakUp Italia - lezioni interattive online di italiano e spagnolo con il metodo KiSS. Verbi, giochi e attività pratiche." />
+<meta name="keywords" content="italiano, spagnolo, lezioni online, KiSS, verbi, giochi linguistici" />
+<link rel="icon" href="assets/favicon.png" sizes="32x32" />
+<meta property="og:title" content="SpeakUp Italia — Metodo KiSS" />
+<meta property="og:description" content="Lezioni interattive online di italiano e spagnolo: verbi, giochi e attività pratiche." />
+<meta property="og:image" content="assets/logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="SpeakUp Italia Logo">
-    <nav>
-      <a href="#lezioni">Lezioni</a>
-      <a href="#social">Social</a>
-      <a href="#contatti">Contatti</a>
+<audio id="success-sound" src="assets/success.wav" preload="auto"></audio>
+<div class="container">
+  <header class="header" role="banner">
+    <div class="brand" role="img" aria-label="Logo SpeakUp Italia">
+      <img src="assets/logo.png" alt="SpeakUp Italia logo" />
+      <div>
+        <h1>SpeakUp Italia</h1>
+        <div class="small">Metodo KiSS — lezioni interattive di italiano e spagnolo</div>
+      </div>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <button id="to-it" class="btn" aria-pressed="true">IT</button>
+      <button id="to-es" class="btn" aria-pressed="false">ES</button>
+      <a class="btn" href="#lezioni">Lezioni</a>
+      <a class="btn" href="#contatti">Contatti</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="logo.png" alt="Logo Animato">
-    <h1>SpeakUp Italia</h1>
-    <p>Impara le lingue con il metodo KiSS: semplice, interattivo e divertente!</p>
-    <a href="https://us05web.zoom.us/j/85152068635?pwd=VWI550PTkO1hnnttNRE9ayTUAIPUbB.1"
-       target="_blank"
-       class="btn btn-blue">🔵 Entra nella lezione Zoom</a>
-    <a href="https://wa.me/59169064630"
-       target="_blank"
-       class="btn btn-whatsapp">💬 Chatta su WhatsApp</a>
-  </section>
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img src="assets/logo.png" class="logo-hero" alt="" aria-hidden="true" />
+      <h2 id="hero-title">Benvenuti su SpeakUp Italia</h2>
+      <p class="small" data-lang="it">Lezioni online con metodo KiSS: attività pratiche, verbi e giochi per migliorare la produzione orale.</p>
+      <p class="small" data-lang="es" style="display:none">Clases online con método KiSS: actividades prácticas, verbos y juegos para mejorar la producción oral.</p>
 
-  <footer id="social">
-    <p>Seguici sui nostri social:</p>
-    <a href="https://www.instagram.com/speakupitalian?igsh=MTh2dGd5anRtajkzNg==" target="_blank">Instagram</a> |
-    <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
-    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
-    <p style="margin-top:10px;">© 2025 SpeakUp Italia – Progetto educativo virtuale</p>
+      <div class="actions">
+        <a class="btn btn-blue link-blue" href="https://us05web.zoom.us/j/85152068635?pwd=VWI550PTkO1hnnttNRE9ayTUAIPUbB.1" target="_blank" rel="noopener">🔵 Entra su Zoom</a>
+        <a class="btn btn-whatsapp whatsapp-link" href="#">💬 Chatta su WhatsApp</a>
+      </div>
+
+      <div class="cards" id="lezioni" aria-label="Lezioni">
+        <article class="card">
+          <h3>Lezione 1 — Verbi in Azione</h3>
+          <p class="small">Esercizi guidati, drag & drop e attività orale.</p>
+          <p><a class="link-blue" href="game1.html">Vai alla lezione</a></p>
+        </article>
+        <article class="card">
+          <h3>Lezione 2 — Sfida delle Parole</h3>
+          <p class="small">Matching e quiz per consolidare il vocabolario.</p>
+          <p><a class="link-blue" href="game2.html">Vai alla lezione</a></p>
+        </article>
+        <article class="card">
+          <h3>Lezione 3 — Cultura Quiz</h3>
+          <p class="small">Domande e curiosità su Italia e Spagna.</p>
+          <p><a class="link-blue" href="game3.html">Vai alla lezione</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contatti" style="margin-top:18px">
+      <div class="card">
+        <h3>Contattaci</h3>
+        <p class="small">Per informazioni e iscrizioni usa WhatsApp o il modulo qui sotto.</p>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label class="small">Nome<br><input name="name" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></label>
+          <label class="small" style="display:block;margin-top:8px">Email<br><input type="email" name="email" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></label>
+          <label class="small" style="display:block;margin-top:8px">Messaggio<br><textarea name="message" rows="4" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></textarea></label>
+          <div style="margin-top:10px"><button class="btn btn-blue" type="submit">Invia richiesta</button></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="small" id="social">
+      Seguici: <a href="https://www.instagram.com/speakupitalian?igsh=MTh2dGd5anRtajkzNg==" target="_blank" rel="noopener">Instagram</a> · <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> · <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <div class="small" style="margin-top:8px">© 2025 SpeakUp Italia — Progetto educativo di italiano e spagnolo</div>
   </footer>
+</div>
+
+<a class="whatsapp-fab whatsapp-link" href="#" aria-hidden="false">Chatta (WhatsApp)</a>
+
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,18 +1,14 @@
-SpeakUp Italia - pacchetto pronto per GitHub Pages
-
+SpeakUpItalia_Pro - pacchetto pronto per GitHub Pages (Pro)
 Contenuto:
-
-- index.html (home)
-- game1.html, game2.html, game3.html (pagine giochi)
-- style.css
-- script.js
-- assets/logo.png
-- assets/favicon.png / favicon.ico
-- assets/success.wav
-
+- index.html
+- game1.html, game2.html, game3.html
+- style.css, app.js
+- assets/ (logo.png, favicon.png, favicon.ico, success.wav)
 Istruzioni:
-1) Carica tutti i file e cartelle nella root del repo GitHub (SpeakUpItalia)
-2) Vai in Settings → Pages e abilita il deploy dal branch main (root)
-3) Il sito sarà disponibile in https://YOURUSERNAME.github.io/SpeakUpItalia
-
-Nota: i link Zoom e WhatsApp sono già inseriti. Modifica i profili social nei file se necessario.
+1) Apri la repo SpeakUpItalia nel tuo account GitHub
+2) Carica tutti i file nella root (non in sottocartelle extra)
+3) Vai in Settings -> Pages e imposta Source: main branch, root (/)
+4) Attendi qualche minuto, poi apri https://TUO_USERNAME.github.io/RepoName
+Note:
+- Modifica il campo Formspree in index.html con il tuo endpoint (se vuoi i messaggi via email)
+- Se vuoi analytics, inserisci il tuo Measurement ID nella sezione indicata di index.html

@@ -1,0 +1,27 @@
+
+:root{
+  --bg:#071022;
+  --panel:#0b1220;
+  --muted:#94a3b8;
+  --accent:#ff6b6b;
+  --blue:#1e90ff;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,var(--bg),#0f1724);color:#e6eef8}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-top{width:56px;height:56px;object-fit:contain}
+.logo-hero{width:240px;max-width:60%;display:block;margin:14px 0}
+.lead{color:var(--muted);margin:0}
+.btn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:inherit;text-decoration:none;cursor:pointer}
+.container{max-width:1100px;margin:20px auto;padding:0 24px}
+.hero{padding:28px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
+.socials{display:flex;gap:10px;margin-top:8px}
+.social{padding:8px 12px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:inherit}
+.quick-links{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+.class-btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none}
+.zoom-link{color:var(--blue);text-decoration:underline;font-weight:700}
+.whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#043017;padding:14px 16px;border-radius:32px;text-decoration:none;font-weight:700}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+@media(max-width:800px){.site-header{padding:12px}.logo-hero{width:160px}}

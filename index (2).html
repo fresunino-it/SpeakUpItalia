@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpeakUp Italia</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      padding: 30px 20px;
+    }
+    .logo {
+      width: 150px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+      color: #1c1c1c;
+    }
+    p {
+      font-size: 1.1em;
+      margin: 0 auto 30px;
+      max-width: 700px;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    .btn-zoom {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+    footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/fresunino-it/SpeakUpItalia/main/logo.png" alt="Logo SpeakUp Italia" class="logo" />
+    <h1>SpeakUp Italia</h1>
+    <p>Lezioni virtuali di italiano e spagnolo con il metodo KiSS — divertenti, pratiche e interattive!</p>
+  </header>
+
+  <section>
+    <a href="https://us05web.zoom.us/j/85152068635?pwd=VWI550PTkO1hnnttNRE9ayTUAIPUbB.1" target="_blank" class="btn btn-zoom">🔵 Entra nella lezione su Zoom</a>
+    <a href="#" id="whatsappButton" class="btn btn-whatsapp">💬 Chatta su WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>Seguici sui social: 
+      <a href="https://www.instagram.com/speakupitalian" target="_blank">Instagram</a> | 
+      <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+      <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+    </p>
+    <p>© 2025 SpeakUp Italia - Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    document.getElementById('whatsappButton').addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = 'https://wa.me/59169064630';
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>

@@ -12,3 +12,4 @@ Istruzioni:
 Note:
 - Modifica il campo Formspree in index.html con il tuo endpoint (se vuoi i messaggi via email)
 - Se vuoi analytics, inserisci il tuo Measurement ID nella sezione indicata di index.html
+Prova commit
